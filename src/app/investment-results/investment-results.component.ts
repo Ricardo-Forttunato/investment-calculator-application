@@ -1,5 +1,5 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component, Input, input } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 
 @Component({
   selector: 'app-investment-results',
@@ -9,21 +9,12 @@ import { Component, Input, input } from '@angular/core';
 })
 export class InvestmentResultsComponent {
   // Code with signal directive
-  // results = input<{ 
-  //   year: number;
-  //   interest: number;
-  //   valueEndOfYear: number;
-  //   annualInvestment: number;
-  //   totalInterest:  number;
-  //   totalAmountInvested: number; 
-  // }>();
-
-  @Input() results?: {
+  results = input<{ 
     year: number;
     interest: number;
     valueEndOfYear: number;
     annualInvestment: number;
     totalInterest:  number;
-    totalAmountInvested: number;
-  }[];
+    totalAmountInvested: number; 
+  }[]>();
 }
